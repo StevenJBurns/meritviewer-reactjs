@@ -1,0 +1,11 @@
+footer {
+  height: 1rem;
+  padding: 1rem;
+  background: #303030;
+  color: #F0F0F0
+}
+
+footer h4 {
+  margin: 0 auto;
+  text-align: center
+}
