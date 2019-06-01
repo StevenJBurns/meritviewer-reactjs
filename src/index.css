@@ -1,12 +1,14 @@
+@font-face {
+  font-family: 'Coalition';
+  src: local('Coalition'), url(./fonts/coalition_v2.woff) format('woff');
+}
+
 * {
   margin: 0;
   padding: 0
 }
 
 body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -14,6 +16,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#react-root {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+  background-color: #707070
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+h1, h2, h4 {
+  font-family: Coalition
 }
