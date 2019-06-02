@@ -5,7 +5,7 @@ import App from './app/App';
 import { AppHeader } from './app/AppHeader/AppHeader';
 import { AppFooter } from './app/AppFooter/AppFooter'
 
-import './index.css';
+import './index.scss';
 
 ReactDOM.render(
   <App>
