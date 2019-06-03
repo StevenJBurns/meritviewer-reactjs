@@ -7,8 +7,8 @@ export const Group = props => {
 
   return (
     <React.Fragment>
-        <span>{ title }</span>
-        { props.children}
+      <span>{ title }</span>
+      { props.children}
     </React.Fragment>
   );
 };

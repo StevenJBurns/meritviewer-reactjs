@@ -7,8 +7,8 @@ export const Category = props => {
 
   return (
     <React.Fragment>
-        <span>{ title }</span>
-        { props.children}
+      <span>{ title }</span>
+      { props.children}
     </React.Fragment>
   );
 };
