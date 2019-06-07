@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './ThemeFilterButton.scss';
+import './EmpireFilterButton.scss';
 
-export const ThemeFilterButton = props => {
+export const EmpireFilterButton = props => {
   const { empire, changeEmpire } = props
 
   return (
@@ -10,12 +10,12 @@ export const ThemeFilterButton = props => {
   );
 };
 
-ThemeFilterButton.propTypes = {
+EmpireFilterButton.propTypes = {
   empire: PropTypes.string,
   changeEmpire: PropTypes.func,
 };
 
-ThemeFilterButton.defaultProptypes = {
+EmpireFilterButton.defaultProptypes = {
   empire: 'ALL',
   changeEmpire: () => {},
 };

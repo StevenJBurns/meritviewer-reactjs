@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ThemeFilterButton } from '../../components/ThemeFilterButton/ThemeFilterButton';
+import { EmpireFilterButton } from '../../components/EmpireFilterButton/EmpireFilterButton';
 
 export const AppMain = props => {
   return (
     <main>
-      <ThemeFilterButton empire="ALL" />
-      <ThemeFilterButton empire="TR" />
-      <ThemeFilterButton empire="NC" />
-      <ThemeFilterButton empire="VS" />
+      <EmpireFilterButton empire="ALL" />
+      <EmpireFilterButton empire="TR" />
+      <EmpireFilterButton empire="NC" />
+      <EmpireFilterButton empire="VS" />
       { props.children }
     </main>
   );
