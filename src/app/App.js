@@ -1,22 +1,22 @@
 import React from 'react';
-import AppData from '../context/meritviewer.json';
-import { AppDataContext } from '../context/AppDataContext';
-import { AppThemeContext } from '../context/AppThemeContext';
+import AppData from '../data/meritviewer.json';
+import { AppDataContext } from '../context/data/AppDataContext';
+import { EmpireThemeContext } from '../context/theme/empireThemeContext';
+import { themes } from '../context/theme/empireThemes';
 import './App.css';
 
-const App = props => {
-  const [theme, setTheme] = React.useState();
-  const [appData, setAppData] = React.useState(AppData);
+export const App = props => {
+  const [theme, setTheme] = React.useState({});
+
+  const changeTheme = newTheme => setTheme(themes[newTheme]);
 
   React.useEffect(() => {
     console.log(theme);
   }, [theme]);
   
   return (
-    <AppThemeContext.Provider value={appData}>
+    <EmpireThemeContext.Provider value={{ theme, changeTheme }}>
       { props.children }
-    </AppThemeContext.Provider>
+    </EmpireThemeContext.Provider>
   );
 };
-
-export default App;
