@@ -1,21 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { EmpireThemeContext } from '../../context/theme/empireThemeContext';
 import './EmpireFilterButton.scss';
 
 export const EmpireFilterButton = props => {
-  const { empire, changeEmpire } = props
+  const { empire } = props;
+  const { changeTheme } = React.useContext(EmpireThemeContext);
 
   return (
-    <button onClick={changeEmpire}>{empire}</button>
-  );
+    <button onClick={() => changeTheme(empire)}>{empire}</button>
+  )
 };
 
 EmpireFilterButton.propTypes = {
   empire: PropTypes.string,
-  changeEmpire: PropTypes.func,
 };
 
 EmpireFilterButton.defaultProptypes = {
   empire: 'ALL',
-  changeEmpire: () => {},
 };

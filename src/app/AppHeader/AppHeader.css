@@ -1,8 +1,9 @@
 header {
   height: 1rem;
   padding: 2rem;
-  background: #303030;
   color: #F0F0F0;
+  background: #303030;
+  transition: color 0.5s, background 0.5s
 }
 
 header h2 {

@@ -2,7 +2,8 @@ footer {
   height: 1rem;
   padding: 1rem;
   background: #303030;
-  color: #F0F0F0
+  color: #F0F0F0;
+  transition: color 0.5s, background 0.5s
 }
 
 footer h4 {
