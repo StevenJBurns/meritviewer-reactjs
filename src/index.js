@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import { App } from './app/App';
 import { AppMain } from './app/AppMain/AppMain';
 import { AppHeader } from './app/AppHeader/AppHeader';
-import { AppFooter } from './app/AppFooter/AppFooter'
+import { AppFooter } from './app/AppFooter/AppFooter';
 import './index.scss';
 
 ReactDOM.render(

@@ -3,7 +3,7 @@ import React from 'react';
 // import { AppDataContext } from '../context/data/AppDataContext';
 import { EmpireThemeContext } from '../context/theme/empireThemeContext';
 import { themes } from '../context/theme/empireThemes';
-import './App.css';
+import './App.scss';
 
 export const App = props => {
   const [theme, setTheme] = React.useState(localStorage.getItem('empireTheme') || 'ALL');
