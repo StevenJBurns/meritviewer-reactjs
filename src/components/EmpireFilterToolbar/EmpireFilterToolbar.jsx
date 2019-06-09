@@ -4,7 +4,7 @@ import './EmpireFilterToolbar.scss';
 
 export const EmpireFilterToolbar = props => {
   return (
-    <div>
+    <div id="empire-filter-toolbar__container">
       { props.children }
     </div>
   );
