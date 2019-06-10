@@ -1,6 +1,6 @@
 import React from 'react';
 import { EmpireThemeContext } from '../../context/theme/empireThemeContext';
-import './AppHeader.css';
+import './AppHeader.scss';
 
 export const AppHeader = () => {
   const { theme } = React.useContext(EmpireThemeContext);
