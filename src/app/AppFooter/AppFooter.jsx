@@ -1,7 +1,7 @@
 import React from 'react';
 import { EmpireThemeContext } from '../../context/theme/empireThemeContext';
 
-import './AppFooter.css';
+import './AppFooter.scss';
 
 export const AppFooter = props => {
   const year = new Date().getFullYear();
