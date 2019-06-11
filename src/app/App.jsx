@@ -6,15 +6,16 @@ import { themes } from '../context/theme/empireThemes';
 import './App.scss';
 
 export const App = props => {
-  const [theme, setTheme] = React.useState(localStorage.getItem('empireTheme') || 'ALL');
+  const [theme, setTheme] = React.useState('');
 
   const changeTheme = newTheme => {
     setTheme(themes[newTheme]);
-    localStorage.setItem('empireTheme', JSON.stringify(newTheme));
+    localStorage.setItem('empireTheme', newTheme);
   };
 
   React.useEffect(() => {
-    setTheme(localStorage.getItem('empireTheme'))
+    const localStorageEmpire = localStorage.getItem('empireTheme') || 'ALL';
+    changeTheme(localStorageEmpire)
   }, [])
 
   return (
