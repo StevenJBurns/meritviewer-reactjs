@@ -12,3 +12,11 @@ export const Group = props => {
     </React.Fragment>
   );
 };
+
+Group.propTypes = {
+  title: PropTypes.string,
+};
+
+Group.defaultProps = {
+  title: '',
+};
