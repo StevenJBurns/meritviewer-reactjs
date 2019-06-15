@@ -1,11 +1,9 @@
 import React from 'react';
-// import { themes } from './empireThemes';
 
-const initialTheme = localStorage.getItem('empireTheme').toString() || 'ALL';
+const initialTheme = localStorage.getItem('empireTheme') || 'ALL';
 
 const initialState = {
   theme: initialTheme,
-  changeEmpireTheme: () => {},
 };
 
 export const EmpireThemeContext = React.createContext(initialState);
