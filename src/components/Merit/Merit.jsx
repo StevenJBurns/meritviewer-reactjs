@@ -9,3 +9,11 @@ export const Merit = props => {
     <span>{ title }</span>
   );
 };
+
+Merit.propTypes = {
+  title: PropTypes.string,
+};
+
+Merit.defaultProps = {
+  title: '',
+};
