@@ -10,3 +10,12 @@ export const EmpireFilterToolbar = props => {
   );
 };
 
+EmpireFilterToolbar.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ]),};
+
+EmpireFilterToolbar.defaultProps = {
+  children: null,
+};
