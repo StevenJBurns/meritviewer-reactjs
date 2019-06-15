@@ -12,3 +12,11 @@ export const Category = props => {
     </React.Fragment>
   );
 };
+
+Category.propTypes = {
+  title: PropTypes.string,
+};
+
+Category.defaultProps = {
+  title: '',
+};
