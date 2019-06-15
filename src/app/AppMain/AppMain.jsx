@@ -25,3 +25,14 @@ export const AppMain = props => {
     </main>
   );
 };
+
+AppMain.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ]),
+};
+
+AppMain.defaultProps = {
+  children: null,
+};
