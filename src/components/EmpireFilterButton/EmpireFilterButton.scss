@@ -2,9 +2,15 @@ button {
   width: 4rem;
   height: 4rem;
   margin: 0.25rem;
-  border-radius: 50%
+  border-radius: 50%;
+  transition: opacity 0.75s;
+  opacity: 0.50;
 }
 
 button:focus {
   outline: none
+}
+
+button:hover {
+  opacity: 1.0
 }
