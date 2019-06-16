@@ -1,5 +1,5 @@
 import React from 'react';
-// import AppData from '../data/meritviewer.json';
+import AppData from '../data/meritviewer.json';
 // import { AppDataContext } from '../context/data/AppDataContext';
 import { EmpireThemeContext } from '../context/theme/empireThemeContext';
 import { themes } from '../context/theme/empireThemes';
@@ -15,7 +15,7 @@ export const App = props => {
 
   React.useEffect(() => {
     const localStorageEmpire = localStorage.getItem('empireTheme') || 'ALL';
-    changeTheme(localStorageEmpire)
+    changeTheme(localStorageEmpire);
   }, [])
 
   return (
