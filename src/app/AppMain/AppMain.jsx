@@ -34,5 +34,5 @@ AppMain.propTypes = {
 };
 
 AppMain.defaultProps = {
-  children: null,
+  children: null
 };
