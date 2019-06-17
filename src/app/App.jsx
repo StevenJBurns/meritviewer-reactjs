@@ -6,39 +6,36 @@ import './App.scss';
 
 export const App = props => {
   const [appData, setAppData] = React.useState(AppData);
-  const [empire, setEmpire] = React.useState('ALL')
+  const [empire, setEmpire] = React.useState(localStorage.getItem('empire') || 'ALL');
   const [theme, setTheme] = React.useState({});
 
-  const changeTheme = newEmpire => {
-    setEmpire(newEmpire);
-    localStorage.setItem('empire', newEmpire);
+  React.useEffect(() => {
+    localStorage.setItem('empire', empire);
 
-    if(newEmpire === 'ALL') return setAppData(AppData);
+    /* bail out early and set appData to AppData is empire is 'ALL' */
+    if(empire === 'ALL') {
+      setAppData(AppData);
+      setTheme(empire);
+      return;
+    };
 
+    /* use map and filter to drill down to the Merit level in AppData*/
     let filteredMerits = AppData.map(category => 
       ({...category, groups: category.groups.map(group =>
         ({...group, merits: group.merits.filter(merit =>
           merit.empire === empire || merit.empire === 'ALL'
         )})
       )})
-    )
+    );
+
     setAppData(filteredMerits);
-  };
-
-  React.useEffect(() => {
-    const localStorageEmpire = localStorage.getItem('empire') || 'ALL';
-    changeTheme(localStorageEmpire);
-  }, []);
-
-  React.useEffect(() => {
-    console.log('empire: ', empire);
-    console.log('merits: ', appData[0].groups[0].merits);
     setTheme(themes[empire]);
-
   }, [empire]);
 
+  const changeTheme = newEmpire => setEmpire(newEmpire);
+
   return (
-    <EmpireThemeContext.Provider value={{ theme, changeTheme }}>
+    <EmpireThemeContext.Provider value={{ appData, theme, changeTheme }}>
       { props.children }
     </EmpireThemeContext.Provider>
   );
