@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { EmpireThemeContext } from '../../context/theme/empireThemeContext';
+import EmpireTitles from '../../data/empireTitles.json';
 import './EmpireFilterButton.scss';
 
 export const EmpireFilterButton = props => {
@@ -8,16 +9,9 @@ export const EmpireFilterButton = props => {
 
   const { changeTheme } = React.useContext(EmpireThemeContext);
 
-  const longEmpireTitles = {
-    ALL: 'All Empires',
-    TR: 'Terran Republic',
-    NC: 'New Conglomerate',
-    VS: 'Vanu Soverignty',
-  };
-
   return (
     <button
-      onMouseEnter={() => handleMouseHover(longEmpireTitles[empire])}
+      onMouseEnter={() => handleMouseHover(EmpireTitles[empire])}
       onMouseLeave={() => handleMouseHover('')}
       onClick={() => changeTheme(empire)}>
         {empire}
