@@ -15,7 +15,7 @@ export const App = props => {
     /* bail out early and set appData to AppData is empire is 'ALL' */
     if(empire === 'ALL') {
       setAppData(AppData);
-      setTheme(empire);
+      setTheme(themes['ALL']);
       return;
     };
 
