@@ -18,6 +18,7 @@ export const EmpireFilterButton = props => {
   return (
     <button
       onMouseEnter={() => handleMouseHover(longEmpireTitles[empire])}
+      onMouseLeave={() => handleMouseHover('')}
       onClick={() => changeTheme(empire)}>
         {empire}
     </button>
