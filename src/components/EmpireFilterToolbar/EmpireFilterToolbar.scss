@@ -7,6 +7,7 @@
 
 #empire-filter-toolbar__hovered-title {
   opacity: 1;
+  min-height: 1.25rem;
   text-align: center;
   animation: 1s hoverEmpireTitle 1s reverse both
 }
