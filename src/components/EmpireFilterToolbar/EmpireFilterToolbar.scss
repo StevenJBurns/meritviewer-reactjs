@@ -6,6 +6,13 @@
 }
 
 #empire-filter-toolbar__hovered-title {
+  opacity: 1;
   text-align: center;
-  transition: opacity 1s
+  animation: 1s hoverEmpireTitle 1s reverse both
+}
+
+@keyframes hoverEmpireTitle {
+  0% { opacity: 1.0; }
+  75% { opacity: 1.0; }
+  100% { opacity: 0.0; }
 }
