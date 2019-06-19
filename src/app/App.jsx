@@ -1,11 +1,12 @@
 import React from 'react';
 import AppData from '../data/meritviewer.json';
+import { AppDataContext } from '../context/data/AppDataContext';
 import { EmpireThemeContext } from '../context/theme/empireThemeContext';
 import { themes } from '../context/theme/empireThemes';
 import './App.scss';
 
 export const App = props => {
-  const [appData, setAppData] = React.useState(AppData);
+  const [currentAppData, setCurrentAppData] = React.useState(AppData);
   const [empire, setEmpire] = React.useState(localStorage.getItem('empire') || 'ALL');
   const [theme, setTheme] = React.useState({});
 
@@ -14,7 +15,7 @@ export const App = props => {
 
     /* bail out early and set appData to AppData is empire is 'ALL' */
     if(empire === 'ALL') {
-      setAppData(AppData);
+      setCurrentAppData(AppData);
       setTheme(themes['ALL']);
       return;
     };
@@ -28,15 +29,17 @@ export const App = props => {
       )})
     );
 
-    setAppData(filteredMerits);
+    setCurrentAppData(filteredMerits);
     setTheme(themes[empire]);
   }, [empire]);
 
   const changeTheme = newEmpire => setEmpire(newEmpire);
 
   return (
-    <EmpireThemeContext.Provider value={{ appData, theme, changeTheme }}>
-      { props.children }
-    </EmpireThemeContext.Provider>
+    <AppDataContext.Provider value={{ currentAppData }}>
+      <EmpireThemeContext.Provider value={{ theme, changeTheme }}>
+        { props.children }
+      </EmpireThemeContext.Provider>
+    </AppDataContext.Provider>
   );
 };
