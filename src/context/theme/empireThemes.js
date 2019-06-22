@@ -1,22 +1,26 @@
 export const themes = {
   ALL: {
-		color: '#F0F0F0',
+		colorDark: '#F0F0F0',
+		colorLight: '',
 		backgroundDark: '#303030',
-		backgroundLight: 'darkgray',
+		backgroundLight: '#D0D0D0',
 	},
 	TR: {
 		color: '#F0F0F0',
+		colorLight: '',
 		backgroundDark: 'darkred',
 		backgroundLight: 'red',
 	},
 	NC: {
 		color: 'gold',
-		backgroundDark: 'darkblue',
-		backgroundLight: 'blue',
+		colorLight: '',
+		backgroundDark: '#003366',
+		backgroundLight: '#c6e3ff',
 	},
 	VS: {
-		color: '#b6ffaf',
+		color: '#B6FFAF',
+		colorLight: '',
 		backgroundDark: '#300070',
-		backgroundLight: 'purple',
+		backgroundLight: '#FF93FF',
 	},
 };
