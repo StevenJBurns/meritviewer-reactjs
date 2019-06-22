@@ -8,6 +8,9 @@ import './App.scss';
 export const App = props => {
   const [currentAppData, setCurrentAppData] = React.useState(AppData);
   const [empire, setEmpire] = React.useState(localStorage.getItem('empire') || 'ALL');
+  const [currentCategory, setCurrentCategory] = React.useState();
+  const [currentGroup, setCurrentGroup] = React.useState();
+  const [currentMerit, setCurrentMerit] = React.useState();
   const [theme, setTheme] = React.useState({});
 
   React.useEffect(() => {
@@ -35,14 +38,16 @@ export const App = props => {
 
   const changeTheme = newEmpire => setEmpire(newEmpire);
 
-  const changeSelectedCategory = newCategory => {};
+  const changeCurrentCategory = newCategory => setCurrentCategory(newCategory);
 
-  const changeSelectedGroup = newGroup => {};
+  const changeCurrentGroup = newGroup => setCurrentGroup(newGroup);
 
-  const changeSelectedMerit = newMerit => {};
+  const changeCurrentMerit = newMerit => setCurrentMerit(newMerit);
 
   return (
-    <AppDataContext.Provider value={{ currentAppData }}>
+    <AppDataContext.Provider value={
+      { currentAppData, changeCurrentCategory, changeCurrentGroup, changeCurrentMerit }
+      }>
       <EmpireThemeContext.Provider value={{ theme, changeTheme }}>
         { props.children }
       </EmpireThemeContext.Provider>
