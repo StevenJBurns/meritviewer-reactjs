@@ -35,6 +35,12 @@ export const App = props => {
 
   const changeTheme = newEmpire => setEmpire(newEmpire);
 
+  const changeSelectedCategory = newCategory => {};
+
+  const changeSelectedGroup = newGroup => {};
+
+  const changeSelectedMerit = newMerit => {};
+
   return (
     <AppDataContext.Provider value={{ currentAppData }}>
       <EmpireThemeContext.Provider value={{ theme, changeTheme }}>
