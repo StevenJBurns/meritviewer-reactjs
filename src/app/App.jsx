@@ -23,7 +23,7 @@ export const App = props => {
       return;
     };
 
-    /* use map and filter to drill down to the Merit level in AppData*/
+    /* use map and filter to drill down to the Merit level in AppData */
     let filteredMerits = AppData.map(category => 
       ({...category, groups: category.groups.map(group =>
         ({...group, merits: group.merits.filter(merit =>
@@ -46,8 +46,12 @@ export const App = props => {
 
   return (
     <AppDataContext.Provider value={
-      { currentAppData, changeCurrentCategory, changeCurrentGroup, changeCurrentMerit }
-      }>
+      { currentAppData,
+        changeCurrentCategory,
+        changeCurrentGroup,
+        changeCurrentMerit,
+      }
+    }>
       <EmpireThemeContext.Provider value={{ theme, changeTheme }}>
         { props.children }
       </EmpireThemeContext.Provider>
