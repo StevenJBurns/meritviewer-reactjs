@@ -9,7 +9,7 @@ export const AppFooter = props => {
   const { theme } = React.useContext(EmpireThemeContext);
 
   const style = {
-    color: theme.color,
+    color: theme.colorLight,
     backgroundColor: theme.backgroundDark
   };
 
